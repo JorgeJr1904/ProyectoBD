@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>');</script>
         <script src="js/material.min.js" ></script>
         <script src="js/sweetalert2.min.js" ></script>
         <script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
@@ -43,24 +43,20 @@
                         <label class="mdl-textfield__label" for="pass">Password</label>
                     </div>
                     <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">
-                        SIGN IN                    </button>
-
-                        <%
-                            int res = 0;
-                            if ("sign_in".equals(request.getParameter("btn_ingresar"))) {
-                                loginDao Logindao = new loginDao();
-                                login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
-                                Logindao.validacionUsuario(Login);
-                                res = Logindao.validacionUsuario(Login);
-                                if (res == 1) {
-                                    request.getRequestDispatcher("home.jsp").forward(request, response);
-
-                        %>
+                        INICIAR SESION</button>
 
                     <%
-                        } else {
+                        int res = 0;
+                        if ("sign_in".equals(request.getParameter("btn_ingresar"))) {
+                            loginDao Logindao = new loginDao();
+                            login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
+                            Logindao.validacionUsuario(Login);
+                            res = Logindao.validacionUsuario(Login);
+                            if (res == 1) {%>  
+                    <%request.getRequestDispatcher("home.jsp").forward(request, response);%>
+                    <% } else {
                     %>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">hola</button>
+                    <script>swal("Oops", "CONTRASEÑA O USUARIO INCORRECTO!", "error");</script>
                     <%
                             }
                         }
