@@ -107,7 +107,7 @@
 			<nav class="full-width">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
-						<a href="home.html" class="full-width">
+						<a href="home.jsp" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
@@ -129,7 +129,7 @@
 						</a>
 						<ul class="full-width menu-principal sub-menu-options">
 							<li class="full-width">
-								<a href="company.html" class="full-width">
+								<a href="company.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-balance"></i>
 									</div>
@@ -139,7 +139,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="providers.html" class="full-width">
+								<a href="providers.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-truck"></i>
 									</div>
@@ -149,7 +149,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="payments.html" class="full-width">
+								<a href="payments.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-card"></i>
 									</div>
@@ -159,7 +159,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="categories.html" class="full-width">
+								<a href="categories.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-label"></i>
 									</div>
@@ -183,7 +183,7 @@
 						</a>
 						<ul class="full-width menu-principal sub-menu-options">
 							<li class="full-width">
-								<a href="admin.jsp.html" class="full-width">
+								<a href="admin.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
 									</div>
@@ -193,7 +193,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="client.html" class="full-width">
+								<a href="client.jsp" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-accounts"></i>
 									</div>
@@ -206,7 +206,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="products.html" class="full-width">
+						<a href="products.jsp" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
@@ -217,7 +217,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="sales.html" class="full-width">
+						<a href="sales.jsp" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
@@ -228,7 +228,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="inventory.html" class="full-width">
+						<a href="inventory.jsp" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-store"></i>
 							</div>
