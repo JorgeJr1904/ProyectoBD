@@ -20,6 +20,7 @@
         <script src="js/main.js" ></script>
     </head>
     <body>
+        <%String res = request.getParameter("rol");%>
         <!-- Notifications area -->
         <section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>

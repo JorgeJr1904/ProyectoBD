@@ -13,7 +13,7 @@ public class contadoresDAO {
     private Connection conn = null;
     private CallableStatement cs = null;
     private ResultSet rs = null;
-    private contadores contador = new contadores();
+    private contadores contador;
 
     public int contadorUsuarios(contadores contadores) throws ClassNotFoundException {
         String sql = "{CALL contadorUsuarios(?,?)}";
@@ -23,12 +23,14 @@ public class contadoresDAO {
             this.conn = getConexion();
             this.cs = this.conn.prepareCall(sql);
 
-            this.cs.setInt(1, this.contador.getNumeroEnviar());
-            this.cs.registerOutParameter(2, java.sql.Types.INTEGER);
+            this.cs.setInt(1, contadores.getNumeroEnviar());
+            this.cs.registerOutParameter (2, java.sql.Types.INTEGER);
             this.cs.execute();
-
-                contadorfinal = this.cs.getInt(2);
-                return contadorfinal;
+            
+                int valor = this.cs.getInt(2);
+                
+                this.contador = new contadores(valor);
+                contadorfinal = contador.getNumeroEnviar();
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
