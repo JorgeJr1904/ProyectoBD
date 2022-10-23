@@ -18,7 +18,7 @@ public class loginDao {
     private login Login;
 
     public int validacionUsuario(login login) throws ClassNotFoundException {
-        String sql = "SELECT * FROM usuario WHERE vUsuario=? and vPass=?";
+        String sql = "SELECT * FROM usuarios WHERE vNombreUsuario=? and vPass=?";
         int registro = 0;
 
         try {
@@ -32,7 +32,7 @@ public class loginDao {
 
             while (rs.next()) {
                 registro = registro + 1;
-                login.setUsuario(rs.getString("vUsuario"));
+                login.setUsuario(rs.getString("vNombreUsuario"));
                 login.setPass(rs.getString("vPass"));
 
             }
@@ -56,8 +56,8 @@ public class loginDao {
         return 0;
     }
 
-    public String validacionRoles(login login) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM usuario WHERE vUsuario=? and vPass=?";
+    public String ObtencionDatosUsuario(login login) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT * FROM usuarios WHERE vNombreUsuario=? and vPass=?";
         String res = null;
         try {
 
@@ -71,14 +71,20 @@ public class loginDao {
             while (this.rs.next()) {
 
                 int id = this.rs.getInt("idUsuario");
-                String usuario = this.rs.getString("vUsuario");
+                String usuario = this.rs.getString("vNombreUsuario");
                 String pass = this.rs.getString("vPass");
                 String correo = this.rs.getString("vCorreo");
-                String rol = this.rs.getString("vRol");
+                String rol = this.rs.getString("iUsuarioRol");
                 
                 this.Login = new login(id, usuario, pass, correo, rol);
                 res = Login.getRol();
-                return res;
+                if ("1".equals(res)) {
+                    return "ADMIN";
+                }if ("2".equals(res)) {
+                    return "SUPERVISOR";
+                }if ("3".equals(res)) {
+                    return "OPERADOR";
+                }
             }
 
         } catch (SQLException ex) {
@@ -94,10 +100,6 @@ public class loginDao {
 
         }
         return res;
-    }
-    public void mostrarResultado() throws ClassNotFoundException, SQLException {
-        validacionRoles(Login);
-        System.out.print(Login);
     }
 
 }
