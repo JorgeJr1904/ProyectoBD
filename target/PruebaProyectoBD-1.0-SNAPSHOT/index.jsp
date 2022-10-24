@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="DAO.loginDao"%>
 <%@page import="constructores.login"%>
+<%@page session= "true"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -47,13 +48,22 @@
 
                     <%
                         int res = 0;
+                        String usuario = request.getParameter("usuario");
                         if ("sign_in".equals(request.getParameter("btn_ingresar"))) {
                             loginDao Logindao = new loginDao();
                             login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
                             Logindao.validacionUsuario(Login);
                             res = Logindao.validacionUsuario(Login);
                             if (res == 1) {%>  
-                    <%request.getRequestDispatcher("home.jsp").forward(request, response);%>
+                    <%
+                        request.setAttribute("usuario", usuario);
+                        loginDao LoginDao = new loginDao();
+                        login Login2 = new login(request.getParameter("usuario"), request.getParameter("pass"));
+                        String res2 = LoginDao.ObtencionDatosUsuario(Login);
+
+                        request.setAttribute("rol", res2);
+                        request.getRequestDispatcher("home.jsp").forward(request, response);
+                    %>
                     <% } else {
                     %>
                     <script>swal("Oops", "CONTRASEÑA O USUARIO INCORRECTO!", "error");</script>
