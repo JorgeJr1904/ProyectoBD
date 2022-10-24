@@ -32,17 +32,17 @@
                 <p class="text-center" style="font-size: 80px;">
                     <i class="zmdi zmdi-account-circle"></i>
                 </p>
-                <p class="text-center text-condensedLight">Sign in with your Account</p>
+                <p class="text-center text-condensedLight">INGRESA TU CUENTA</p>
                 <form method="POST">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="userName" name="usuario">
-                        <label class="mdl-textfield__label" for="userName">User Name</label>
+                        <label class="mdl-textfield__label" for="userName">NOMBRE DE USUSARIO</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="password" id="pass" name="pass">
-                        <label class="mdl-textfield__label" for="pass">Password</label>
+                        <label class="mdl-textfield__label" for="pass">CONTRASEÑA</label>
                     </div>
-                    <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">
+                    <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;" >
                         INICIAR SESION</button>
 
                     <%

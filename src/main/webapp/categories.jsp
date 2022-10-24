@@ -112,7 +112,7 @@
 								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								HOME
+								INICIO
 							</div>
 						</a>
 					</li>
@@ -123,7 +123,7 @@
 								<i class="zmdi zmdi-case"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								ADMINISTRATION
+								ADMINISTRACION
 							</div>
 							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
@@ -134,7 +134,7 @@
 										<i class="zmdi zmdi-balance"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										COMPANY
+										HABITACIONES 
 									</div>
 								</a>
 							</li>
@@ -144,7 +144,7 @@
 										<i class="zmdi zmdi-truck"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										PROVIDERS
+										LOCALIDADES
 									</div>
 								</a>
 							</li>
@@ -154,7 +154,7 @@
 										<i class="zmdi zmdi-card"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										PAYMENTS
+										PAGOS
 									</div>
 								</a>
 							</li>
@@ -164,7 +164,7 @@
 										<i class="zmdi zmdi-label"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										CATEGORIES
+										CATEGORIAS DE HABITACION
 									</div>
 								</a>
 							</li>
@@ -177,7 +177,7 @@
 								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								USERS
+								USUARIOS
 							</div>
 							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
@@ -188,7 +188,7 @@
 										<i class="zmdi zmdi-account"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										ADMINISTRATORS
+										ADMINISTRADORES
 									</div>
 								</a>
 							</li>
@@ -198,7 +198,7 @@
 										<i class="zmdi zmdi-accounts"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										CLIENT
+										CLIENTES
 									</div>
 								</a>
 							</li>
@@ -211,7 +211,7 @@
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								PRODUCTS
+								HABITACIONES
 							</div>
 						</a>
 					</li>
@@ -222,7 +222,7 @@
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								SALES
+								DISPONIBILIDAD
 							</div>
 						</a>
 					</li>
@@ -233,7 +233,7 @@
 								<i class="zmdi zmdi-store"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								INVENTORY
+								INVENTARIO
 							</div>
 						</a>
 					</li>
