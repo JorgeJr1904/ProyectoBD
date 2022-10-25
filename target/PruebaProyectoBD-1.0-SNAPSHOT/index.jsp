@@ -42,7 +42,7 @@
                         <input class="mdl-textfield__input" type="password" id="pass" name="pass">
                         <label class="mdl-textfield__label" for="pass">CONTRASEÑA</label>
                     </div>
-                    <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;" >
+                    <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #000000; margin: 0 auto; display: block;" >
                         INICIAR SESION</button>
 
                     <%
