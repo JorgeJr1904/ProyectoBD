@@ -318,7 +318,7 @@
                             <h1 class="font-weight-bold mb-3">HAS TU RESERVACION</h1>
                             <p class="text-muted mb-5">---------------------------------------------------------------------------------</p>
 
-                            <form>
+                            <form method="POST" action="validacionReservar.jsp">
                                 <div class="form-row mb-2">
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">HABITACIONES<span class="text-danger">*</span></label>
@@ -621,7 +621,7 @@
                                     <h2>METODOS DE PAGO</h2>
                                     <p>----------------------------------------------------------------------------------</p>
                                     <div class="form-group col-md-6">
-                                        <label class="font-weight-bold">NOMBRES<span class="text-danger">*</span></label>
+                                        <label class="font-weight-bold">TIPO DE PAGO<span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" placeholder="COMPLETOS">
                                     </div>
                                     <div class="form-group col-md-6">
