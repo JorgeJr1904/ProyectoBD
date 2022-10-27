@@ -23,9 +23,9 @@
         <script src="js/main.js" ></script>
     </head>
     <body>
-        <%String usuario = request.getParameter("usuario");%>
+        <%String Usuario = request.getParameter("usuario");%>
         
-        <%String res = request.getParameter("rol");%>
+        <%String rol = request.getParameter("rol");%>
         <!-- Notifications area -->
         <section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>
@@ -106,18 +106,15 @@
                     </div>
                     <figcaption>
                         <span>  
-                            <%=request.getParameter("usuario")%><br>
-                            <small><%if (res != null) {%>   
-                                <%=res%>
-                                <%} else {%>
-                                <%=request.getParameter("rol")%><%}%></small>
+                            <%=Usuario%><br>
+                            <small><%=rol%></small>
                         </span>
                     </figcaption>
                 </figure>
                 <nav class="full-width">
                     <ul class="full-width list-unstyle menu-principal">
                         <li class="full-width">
-                            <a class="full-width">
+                            <a href="home.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-view-dashboard"></i>
                                 </div>
@@ -126,7 +123,7 @@
                                 </div>
                             </a>
                         </li>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -140,8 +137,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="company.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -156,7 +152,7 @@
                                 </li>
                             </ul>
                         </li><%}%>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN") {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN") {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -170,8 +166,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="crearUsuario.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -181,8 +176,7 @@
                                     </a>
                                 </li>
                                 <li class="full-width">
-                                    <a href="roles.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="roles.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-accounts"></i>
                                         </div>
@@ -196,8 +190,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                            <a href="hoteles.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -208,8 +201,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                            <a href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -220,8 +212,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="inventory.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                            <a href="inventory.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-store"></i>
                                 </div>
@@ -328,7 +319,7 @@
                         <td>Q<%=hotel.getPrecio()%>.00</td>
                         <td><%=hotel.getNoHabitaciones()%></td>                     
                         <td><img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152451/Mandarin-Oriental-Hong-Kong-3.jpg" width="50PX" height="50px"/></td>
-                <td><a class="button type1"  href="reservaciones.jsp?usuario=<%=usuario%>&&rol=<%=res%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
+                <td><a class="button type1"  href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
                     </tr>
                     <%}%>
                 </tbody>
