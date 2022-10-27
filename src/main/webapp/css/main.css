@@ -34,9 +34,9 @@
 					Estilos generales
 ======================================================*/
 :root{
-	--color-text: #3F51B5;
+	--color-text: #000000;
 	--primary-color: #2B2B2C;
-	--acent-color: #DB763B;
+	--acent-color: #3bc5db;
 }
 html, body{
 	width: 100%;
@@ -44,19 +44,32 @@ html, body{
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	font-family: "RobotoRegular";
+	font-family: "times new rhoman";
 	position: relative;
 	background-color: #fff;
 }
-.text-condensedLight{ font-family: "RobotoCondensedLight"; }
+.text-condensedLight{ font-family: "times new rhoman"; }
 .text-center{ text-align: center; }
-.tittles{ font-family: "OswaldLight"; }
+.tittles{ font-family: "times new rhoman"; }
 .mdl-textfield{ width: 100%; }
 .full-width{
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	box-sizing: border-box;
+}
+.text1{
+    color: #fff;
+    font-family: 'times new rhoman', sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 5px #000;
+    text-align: center;
+}
+.main{
+    background-color: #3bc5db; 
+    border-radius: 400px;
 }
 .list-unstyle{
 	margin: 0;
@@ -276,7 +289,7 @@ html, body{
 	align-items: center;
 	justify-content: center;
 	color: var(--color-text);
-	background-image: url(../assets/img/fontLogin.jpg);
+	background-image: url(../assets/img/login.jpg);
 }
 .container-login{
 	width: 100%;
@@ -294,6 +307,9 @@ html, body{
 	height: 45px;
 	color: #fff;
 }
+a{
+        text-decoration: none;
+}
 .navBar-options{
 	line-height: 45px;
 	height: 45px;
@@ -307,6 +323,7 @@ html, body{
 .navBar-options-change{
 	width: 100%;
 }
+
 .navBar-options .btn-menu,
 .navBar-options-list{
 	line-height: 45px;
@@ -315,6 +332,104 @@ html, body{
 	height: 45px;
 	margin: 0;
 	padding: 0;
+}
+table.table2{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    border-collapse:separate;
+}
+tr:nth-child(even){
+    background-color: #ddd; 
+    cursor: pointer;
+}
+tr:hover{
+    background-color: #B7E9FF;
+    color: white;
+    cursor: pointer;
+}
+.table2 thead th{
+    padding:10px;
+    color:#fff;
+    text-shadow:1px 1px 1px #568F23;
+    border:1px solid #29d9b9;
+    border-bottom:3px solid #29d9b9;
+    background-color:#9DD929;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(67,180,192)),
+        color-stop(0.51, rgb(68,170,187)),
+        color-stop(0.87, rgb(41,185,217))
+        );
+    background: -moz-linear-gradient(
+        center bottom,
+        rgb(123,192,67) 2%,
+        rgb(139,198,66) 51%,
+        rgb(158,217,41) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.table2 thead th:empty{
+    background:transparent;
+    border:none;
+}
+.table2 tbody th{
+    color:#fff;
+    cursor: pointer;
+    text-shadow:1px 1px 1px #568F23;
+    background-color:#9DD929;
+    border:1px solid #37c7ce;
+    border-right:3px solid #29d9b9;
+    padding:0px 10px;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.02, rgb(41,2185,217)),
+        color-stop(0.51, rgb(222,227,216)),
+        color-stop(0.87, rgb(67,175,192))
+        );
+    background: -moz-linear-gradient(
+        left bottom,
+        rgb(158,217,41) 2%,
+        rgb(139,198,66) 51%,
+        rgb(123,192,67) 87%
+        );
+    -moz-border-radius:5px 0px 0px 5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.table2 tfoot td{
+    color: #9CD009;
+    font-size:32px;
+    text-align:center;
+    padding:10px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+.table2 tfoot th{
+    color:#666;
+}
+
+.table2 tbody td{
+    padding:20px;
+    text-align:center;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#666;
+    text-shadow:1px 1px 1px #fff;
 }
 .navBar-options .btn-menu{
 	width: 40px;
@@ -329,12 +444,19 @@ html, body{
 .navBar-options-list{
 	right: 9px;
 }
+.button{position:relative;padding:1em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:18px;}
+.button.type1{color:#566473}
+.button.type1.type1::after,.button.type1.type1::before{content:"";display:block;position:absolute;width:20%;height:20%;border:2px solid;transition:all .6s ease;border-radius:2px}
+.button.type1.type1::after{bottom:0;right:0;border-color:transparent #566473 #566473 transparent}
+.button.type1.type1::before{top:0;left:0;border-color:#566473 transparent transparent #566473}
+.button.type1.type1:hover:after,.button.type1.type1:hover:before{width:100%;height:100%}
 .navBar-options-list .noLink{
 	cursor: inherit !important;
 }
 .navBar-options-list ul{
 	height: 45px;
 }
+
 .navBar-options-list ul li{
 	height: 45px;
 	line-height: 45px;

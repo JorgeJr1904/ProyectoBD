@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * @author JorgeJr
  */
 public class conexion {
-        private static final String URL = "jdbc:mysql://127.0.0.1:3307/prueba_proyecto_bd?serverTmezone=UTC";
+        private static final String URL = "jdbc:mysql://127.0.0.1:3307/proyectoBD?serverTmezone=UTC";
     private static final String USER = "root";
     private static final String PASSWORD = "123456";
     
