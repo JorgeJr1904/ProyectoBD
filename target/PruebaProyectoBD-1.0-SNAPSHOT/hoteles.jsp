@@ -150,16 +150,9 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                    
+                                  
                                 </li>
                             </ul>
                         </li><%}%>
@@ -312,14 +305,16 @@
                     </p>
                 </div>
             </section>
-            <table class="table">
-                <thead>
-                    <tr>
+            <div class="main">
+                    <h1 class="text1">LISTA DE HOTELES</h1>
+                    </div>
+            <table class="table2">
+                <thead
+                    <tr >
                         <th>HABITACION</th>
                         <th>PRECIO</th>
                         <th>DISPONIBLES</th>
                         <th>IMAGEN</th>
-                    </tr>
                 </thead>
                 <tbody>
                     <%
@@ -328,17 +323,16 @@
                         //Collections.reverse(mensajes); sirve para hacer la lista de mayor a menor
                         for (Hoteles hotel : hoteles) {
                     %>
-
                     <tr>
-                        <th></th>
                         <th scope="row"><%=hotel.getNombreHabitacion()%></th>
                         <td>Q<%=hotel.getPrecio()%>.00</td>
-                        <td><%=hotel.getNoHabitaciones()%></td>
+                        <td><%=hotel.getNoHabitaciones()%></td>                     
                         <td><img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152451/Mandarin-Oriental-Hong-Kong-3.jpg" width="50PX" height="50px"/></td>
-                        <td><a href="reservaciones.jsp?usuario=<%=usuario%>&&rol=<%=res%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
+                <td><a class="button type1"  href="reservaciones.jsp?usuario=<%=usuario%>&&rol=<%=res%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
                     </tr>
                     <%}%>
                 </tbody>
+            </table>
         </section>
     </body>
 </html>

@@ -147,16 +147,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                    
                                 </li>
                             </ul>
                         </li><%}%>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Categories</title>
+	<title>CATEGORIAS</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/sweetalert2.css">
 	<link rel="stylesheet" href="css/material.min.css">
@@ -24,15 +24,15 @@
 	<section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>
             <section class="NotificationArea">
-                <div class="full-width text-center NotificationArea-title tittles">Notifications <i class="zmdi zmdi-close btn-Notification"></i></div>
+                <div class="full-width text-center NotificationArea-title tittles"><i class="zmdi zmdi-close btn-Notification"></i></div>
                 <a href="#" class="Notification" id="notifation-unread-1">
                     <div class="Notification-icon"><i class="zmdi zmdi-accounts-alt bg-info"></i></div>
                     <div class="Notification-text">
                         <p>
                             <i class="zmdi zmdi-circle"></i>
-                            <strong>New User Registration</strong> 
+                            <strong>REGISTRAR NUEVO USUARIO</strong> 
                             <br>
-                            <small>Just Now</small>
+                            <small>REGISTRAR</small>
                         </p>
                     </div>
                     <div class="mdl-tooltip mdl-tooltip--left" for="notifation-unread-1">Notification as UnRead</div> 
@@ -42,9 +42,9 @@
                     <div class="Notification-text">
                         <p>
                             <i class="zmdi zmdi-circle-o"></i>
-                            <strong>New Updates</strong> 
+                            <strong>NUEVAS ACTUALIZACIONES</strong> 
                             <br>
-                            <small>30 Mins Ago</small>
+                            <small>HACE 30 MIN</small>
                         </p>
                     </div>
                     <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-1">Notification as Read</div>
@@ -54,9 +54,9 @@
                     <div class="Notification-text">
                         <p>
                             <i class="zmdi zmdi-circle"></i>
-                            <strong>Archive uploaded</strong> 
+                            <strong>ACTUALIZAR ARCHIVO</strong> 
                             <br>
-                            <small>31 Mins Ago</small>
+                            <small>HACE 40 MIN</small>
                         </p>
                     </div>
                     <div class="mdl-tooltip mdl-tooltip--left" for="notifation-unread-2">Notification as UnRead</div>
@@ -66,9 +66,9 @@
                     <div class="Notification-text">
                         <p>
                             <i class="zmdi zmdi-circle-o"></i>
-                            <strong>New Mail</strong> 
+                            <strong>NUEVO CORREO</strong> 
                             <br>
-                            <small>37 Mins Ago</small>
+                            <small>HACE 20 MIN</small>
                         </p>
                     </div>
                     <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-2">Notification as Read</div>
@@ -78,9 +78,9 @@
                     <div class="Notification-text">
                         <p>
                             <i class="zmdi zmdi-circle-o"></i>
-                            <strong>Folder delete</strong> 
+                            <strong>BORRADOR</strong> 
                             <br>
-                            <small>1 hours Ago</small>
+                            <small>HACE 10 DIAS</small>
                         </p>
                     </div>
                     <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-3">Notification as Read</div>
@@ -116,7 +116,7 @@
                                     <i class="zmdi zmdi-view-dashboard"></i>
                                 </div>
                                 <div class="navLateral-body-cr">
-                                    HOME
+                                    INICIO
                                 </div>
                             </a>
                         </li>
@@ -144,16 +144,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                   
                                 </li>
                             </ul>
                         </li><%}%>
@@ -215,7 +207,7 @@
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
                                 <div class="navLateral-body-cr">
-                                    CHECK OUT
+                                    DISPONIBILIDAD
                                 </div>
                             </a>
                         </li>
@@ -238,7 +230,7 @@
                                     <i class="zmdi zmdi-wrench"></i>
                                 </div>
                                 <div class="navLateral-body-cr">
-                                    SETTINGS
+                                    CONFIGURACIONES
                                 </div>
                                 <span class="zmdi zmdi-chevron-left"></span>
                             </a>
@@ -249,7 +241,7 @@
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
                                         <div class="navLateral-body-cr">
-                                            OPTION
+                                            OPCION 1
                                         </div>
                                     </a>
                                 </li>
@@ -259,7 +251,7 @@
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
                                         <div class="navLateral-body-cr">
-                                            OPTION
+                                            OPCION 2
                                         </div>
                                     </a>
                                 </li>
@@ -275,16 +267,16 @@
 		<div class="full-width navBar">
 			<div class="full-width navBar-options">
 				<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
-				<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+				<div class="mdl-tooltip" for="btn-menu">OCULTAR MENU</div>
 				<nav class="navBar-options-list">
 					<ul class="list-unstyle">
 						<li class="btn-Notification" id="notifications">
 							<i class="zmdi zmdi-notifications"></i>
-							<div class="mdl-tooltip" for="notifications">Notifications</div>
+							<div class="mdl-tooltip" for="notifications">NOTIFICACIONES</div>
 						</li>
 						<li class="btn-exit" id="btn-exit">
 							<i class="zmdi zmdi-power"></i>
-							<div class="mdl-tooltip" for="btn-exit">LogOut</div>
+							<div class="mdl-tooltip" for="btn-exit">CERRAR SECION</div>
 						</li>
 						<li class="text-condensedLight noLink" ><small>User Name</small></li>
 						<li class="noLink">

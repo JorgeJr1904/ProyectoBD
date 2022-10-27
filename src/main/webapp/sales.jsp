@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+     <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sales</title>
@@ -18,6 +23,7 @@
 	<script src="js/sweetalert2.min.js" ></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="js/main.js" ></script>
+         <link rel="stylesheet" href="css/estu.css" >
 </head>
 <body>
         <%String res = request.getParameter("rol");%>
@@ -145,16 +151,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                   
                                 </li>
                             </ul>
                         </li><%}%>
@@ -306,55 +304,79 @@
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
 				</p>
 			</div>
-		</section>
-		<div class="full-width divider-menu-h"></div>
-		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-				<div class="table-responsive">
-					<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
-						<thead>
-							<tr>
-								<th class="mdl-data-table__cell--non-numeric">Date</th>
-								<th>Client</th>
-								<th>Payment</th>
-								<th>Total</th>
-								<th>Options</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
 						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</section>
+					</section>
+                 <section class="contact-box">
+       <div class="row no-gutters bg-dark">
+           <div class="col-xl-5 col-lg-12 register-bg">
+            <div class="position-absolute testiomonial p-4">
+                <h3 class="font-weight-bold text-light">RESERVACION HOTEL</h3>
+                <p class="lead text-light">REVERSA YA DESDE LA COMODIDAD DE TU CASA</p>
+            </div>
+           </div>
+           <div class="col-xl-7 col-lg-12 d-flex">
+                <div class="container align-self-center p-6">
+                    <h1 class="font-weight-bold mb-3">HAS TU RESERVACION</h1>
+                    <p class="text-muted mb-5">---------------------------------------------------------------------------------</p>
+
+                    <form>
+                        <div class="form-row mb-2">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">HABITACIONES<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="NUM.HABITACIONES">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">FECHA.RESERVACION<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="**/**/****">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">FECHA DE INGRESO<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="**/**/****">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">FECHA DE SALIDA<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="**/**/****">
+                            </div>
+                             <p>----------------------------------------------------------------------------------</p>
+                             <h2>DATOS DE PERSONA</h2>
+                             <p>----------------------------------------------------------------------------------</p>
+                             <div class="form-group col-md-6">
+                                <label class="font-weight-bold">NOMBRES<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="COMPLETOS">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">APELLIDOS<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="COMPLETOS">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">NUMERO<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="CELULAR O CASA">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">TIPO DE PAGO<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="EFECTIVO O TARJETA">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">HABITACION<span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" placeholder="TIPO DE HABITACION">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">ESTADO<span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" placeholder="CIUDAD">
+                        </div>
+                        <button class="btn btn-primary width-100">RESERVAR</button>
+                    </form>
+                </div>
+           </div>
+       </div>
+   </section>
+        <%
+            String usuario = request.getParameter("usuario");
+            String rol = request.getParameter("rol");
+            String idHabitacion = request.getParameter("idHabitacion");
+        %>
+                
 </body>
 </html>
