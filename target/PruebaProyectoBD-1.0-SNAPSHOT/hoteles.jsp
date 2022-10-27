@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="constructores.Hoteles"%>
+<%@page import="DAO.HotelesDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -20,7 +23,9 @@
         <script src="js/main.js" ></script>
     </head>
     <body>
-        <%String res = request.getParameter("rol");%>
+        <%String Usuario = request.getParameter("usuario");%>
+        
+        <%String rol = request.getParameter("rol");%>
         <!-- Notifications area -->
         <section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>
@@ -101,18 +106,15 @@
                     </div>
                     <figcaption>
                         <span>  
-                            <%=request.getParameter("usuario")%><br>
-                            <small><%if (res != null) {%>   
-                                <%=res%>
-                                <%} else {%>
-                                <%=request.getParameter("rol")%><%}%></small>
+                            <%=Usuario%><br>
+                            <small><%=rol%></small>
                         </span>
                     </figcaption>
                 </figure>
                 <nav class="full-width">
                     <ul class="full-width list-unstyle menu-principal">
                         <li class="full-width">
-                            <a class="full-width">
+                            <a href="home.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-view-dashboard"></i>
                                 </div>
@@ -121,7 +123,7 @@
                                 </div>
                             </a>
                         </li>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -135,8 +137,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="company.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -145,20 +146,13 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                    
+                                  
                                 </li>
                             </ul>
                         </li><%}%>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN") {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN") {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -172,8 +166,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="crearUsuario.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -183,8 +176,7 @@
                                     </a>
                                 </li>
                                 <li class="full-width">
-                                    <a href="roles.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                    <a href="roles.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-accounts"></i>
                                         </div>
@@ -198,8 +190,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                            <a href="hoteles.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -210,8 +201,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                            <a href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -222,8 +212,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="inventory.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                            <a href="inventory.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-store"></i>
                                 </div>
@@ -303,224 +292,38 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+                        Aqui puede asignar las habitaciones.
                     </p>
                 </div>
             </section>
-            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-                <div class="mdl-tabs__tab-bar">
-                    <a href="#tabNewProduct" class="mdl-tabs__tab is-active">NEW</a>
-                    <a href="#tabListProducts" class="mdl-tabs__tab">LIST</a>
-                </div>
-                <div class="mdl-tabs__panel is-active" id="tabNewProduct">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <div class="full-width panel mdl-shadow--2dp">
-                                <div class="full-width panel-tittle bg-primary text-center tittles">
-                                    New Product
-                                </div>
-                                <div class="full-width panel-content">
-                                    <form>
-                                        <div class="mdl-grid">
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; BASIC INFORMATION</legend><br>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode">
-                                                    <label class="mdl-textfield__label" for="BarCode">Barcode</label>
-                                                    <span class="mdl-textfield__error">Invalid barcode</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9Ã¡Ã©Ã­Ã³ÃºÃÃÃÃÃ ]*(\.[0-9]+)?" id="NameProduct">
-                                                    <label class="mdl-textfield__label" for="NameProduct">Name</label>
-                                                    <span class="mdl-textfield__error">Invalid name</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
-                                                    <label class="mdl-textfield__label" for="StrockProduct">Units</label>
-                                                    <span class="mdl-textfield__error">Invalid number</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
-                                                    <label class="mdl-textfield__label" for="PriceProduct">Price</label>
-                                                    <span class="mdl-textfield__error">Invalid price</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="discountProduct">
-                                                    <label class="mdl-textfield__label" for="discountProduct">% Discount</label>
-                                                    <span class="mdl-textfield__error">Invalid discount</span>
-                                                </div>	
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; CATEGORY</legend><br>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <div class="mdl-textfield mdl-js-textfield">
-                                                    <select class="mdl-textfield__input">
-                                                        <option value="" disabled="" selected="">Select category</option>
-                                                        <option value="">Category 1</option>
-                                                        <option value="">Category 2</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; SUPPLIER DATA AND MODEL</legend><br>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <div class="mdl-textfield mdl-js-textfield">
-                                                    <select class="mdl-textfield__input">
-                                                        <option value="" disabled="" selected="">Select provider</option>
-                                                        <option value="">Provider 1</option>
-                                                        <option value="">Provider 2</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text"  id="modelProduct">
-                                                    <label class="mdl-textfield__label" for="modelProduct">Model</label>
-                                                    <span class="mdl-textfield__error">Invalid model</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" id="markProduct">
-                                                    <label class="mdl-textfield__label" for="markProduct">Mark</label>
-                                                    <span class="mdl-textfield__error">Invalid Mark</span>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--12-col">
-                                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; OTHER DATA</legend><br>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield">
-                                                    <input type="date" class="mdl-textfield__input">
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield">
-                                                    <select class="mdl-textfield__input">
-                                                        <option value="" disabled="" selected="">Select status</option>
-                                                        <option value="">Active</option>
-                                                        <option value="">deactivated</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                                <div class="mdl-textfield mdl-js-textfield">
-                                                    <input type="file">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">
-                                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </button>
-                                        <div class="mdl-tooltip" for="btn-addProduct">Add Product</div>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+            <div class="main">
+                    <h1 class="text1">LISTA DE HOTELES</h1>
                     </div>
-                </div>
-                <div class="mdl-tabs__panel" id="tabListProducts">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchProduct">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </label>
-                                    <div class="mdl-textfield__expandable-holder">
-                                        <input class="mdl-textfield__input" type="text" id="searchProduct">
-                                        <label class="mdl-textfield__label"></label>
-                                    </div>
-                                </div>
-                            </form>
-                            <nav class="full-width menu-categories">
-                                <ul class="list-unstyle text-center">
-                                    <li><a href="#!">Category 1</a></li>
-                                    <li><a href="#!">Category 2</a></li>
-                                    <li><a href="#!">Category 3</a></li>
-                                    <li><a href="#!">Category 4</a></li>
-                                </ul>
-                            </nav>
-                            <div class="full-width text-center" style="padding: 30px 0;">
-                                <div class="mdl-card mdl-shadow--2dp full-width product-card">
-                                    <div class="mdl-card__title">
-                                        <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        <small>Stock</small><br>
-                                        <small>Category</small>
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        Product name
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="mdl-card mdl-shadow--2dp full-width product-card">
-                                    <div class="mdl-card__title">
-                                        <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        <small>Stock</small><br>
-                                        <small>Category</small>
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        Product name
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="mdl-card mdl-shadow--2dp full-width product-card">
-                                    <div class="mdl-card__title">
-                                        <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        <small>Stock</small><br>
-                                        <small>Category</small>
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        Product name
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="mdl-card mdl-shadow--2dp full-width product-card">
-                                    <div class="mdl-card__title">
-                                        <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        <small>Stock</small><br>
-                                        <small>Category</small>
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        Product name
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <table class="table2">
+                <thead
+                    <tr >
+                        <th>HABITACION</th>
+                        <th>PRECIO</th>
+                        <th>DISPONIBLES</th>
+                        <th>IMAGEN</th>
+                </thead>
+                <tbody>
+                    <%
+                        HotelesDAO hotelesDao = new HotelesDAO();
+                        List<Hoteles> hoteles = hotelesDao.seleccionar();
+                        //Collections.reverse(mensajes); sirve para hacer la lista de mayor a menor
+                        for (Hoteles hotel : hoteles) {
+                    %>
+                    <tr>
+                        <th scope="row"><%=hotel.getNombreHabitacion()%></th>
+                        <td>Q<%=hotel.getPrecio()%>.00</td>
+                        <td><%=hotel.getNoHabitaciones()%></td>                     
+                        <td><img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152451/Mandarin-Oriental-Hong-Kong-3.jpg" width="50PX" height="50px"/></td>
+                <td><a class="button type1"  href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
         </section>
     </body>
 </html>

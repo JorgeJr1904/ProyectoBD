@@ -1,27 +1,30 @@
+<%@page import="java.io.InputStream"%>
+<%@page import="DAO.HotelesDAO"%>
+<%@page import="constructores.Hoteles"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Company</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/sweetalert2.css">
-	<link rel="stylesheet" href="css/material.min.css">
-	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-	<link rel="stylesheet" href="css/main.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>');</script>
-	<script src="js/material.min.js" ></script>
-	<script src="js/sweetalert2.min.js" ></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
-	<script src="js/main.js" ></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Company</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/sweetalert2.css">
+        <link rel="stylesheet" href="css/material.min.css">
+        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>');</script>
+        <script src="js/material.min.js" ></script>
+        <script src="js/sweetalert2.min.js" ></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
+        <script src="js/main.js" ></script>
+    </head>
+    <body>
         <%String res = request.getParameter("rol");%>
-	<!-- Notifications area -->
-	<section class="full-width container-notifications">
+        <!-- Notifications area -->
+        <section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>
             <section class="NotificationArea">
                 <div class="full-width text-center NotificationArea-title tittles">Notifications <i class="zmdi zmdi-close btn-Notification"></i></div>
@@ -144,16 +147,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="full-width">
-                                    <a href="payments.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
-                                        <div class="navLateral-body-cl">
-                                            <i class="zmdi zmdi-card"></i>
-                                        </div>
-                                        <div class="navLateral-body-cr">
-                                            AGREGAR TIPO DE PAGO
-                                        </div>
-                                    </a>
+                                <li >
+                                    
                                 </li>
                             </ul>
                         </li><%}%>
@@ -198,7 +193,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="hoteles.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=res%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -210,7 +205,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="sales.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=res%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -222,7 +217,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="inventory.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=res%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-store"></i>
                                 </div>
@@ -269,124 +264,105 @@
                 </nav>
             </div>
         </section>
-	<!-- pageContent -->
-	<section class="full-width pageContent">
-		<!-- navBar -->
-		<div class="full-width navBar">
-			<div class="full-width navBar-options">
-				<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
-				<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
-				<nav class="navBar-options-list">
-					<ul class="list-unstyle">
-						<li class="btn-Notification" id="notifications">
-							<i class="zmdi zmdi-notifications"></i>
-							<div class="mdl-tooltip" for="notifications">Notifications</div>
-						</li>
-						<li class="btn-exit" id="btn-exit">
-							<i class="zmdi zmdi-power"></i>
-							<div class="mdl-tooltip" for="btn-exit">LogOut</div>
-						</li>
-						<li class="text-condensedLight noLink" ><small>User Name</small></li>
-						<li class="noLink">
-							<figure>
-								<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
-							</figure>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<section class="full-width header-well">
-			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-balance"></i>
-			</div>
-			<div class="full-width header-well-text">
-				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
-				</p>
-			</div>
-		</section>
-		<div class="full-width divider-menu-h"></div>
-		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--12-col">
-				<div class="full-width panel mdl-shadow--2dp">
-					<div class="full-width panel-tittle bg-primary text-center tittles">
-						New company
-					</div>
-					<div class="full-width panel-content">
-						<form>
-							<div class="mdl-grid">
-								<div class="mdl-cell mdl-cell--12-col">
-		                            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATA COMPANY</legend><br>
-		                        </div>
-								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNICompany">
-										<label class="mdl-textfield__label" for="DNICompany">DNI</label>
-										<span class="mdl-textfield__error">Invalid number</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9Ã¡Ã©Ã­Ã³ÃºÃÃÃÃÃ ]*(\.[0-9]+)?" id="NameCompany">
-										<label class="mdl-textfield__label" for="NameCompany">Name</label>
-										<span class="mdl-textfield__error">Invalid name</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--12-col">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="addressCompany">
-										<label class="mdl-textfield__label" for="addressCompany">Address</label>
-										<span class="mdl-textfield__error">Invalid address</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="email" id="emailCompany">
-										<label class="mdl-textfield__label" for="emailCompany">E-mail</label>
-										<span class="mdl-textfield__error">Invalid E-mail</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="urlCompany">
-										<label class="mdl-textfield__label" for="urlCompany">Web</label>
-										<span class="mdl-textfield__error">Invalid web</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneCompany">
-										<label class="mdl-textfield__label" for="phoneCompany">Phone</label>
-										<span class="mdl-textfield__error">Invalid phone number</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="faxCompany">
-										<label class="mdl-textfield__label" for="faxCompany">Fax</label>
-										<span class="mdl-textfield__error">Invalid fax number</span>
-									</div>
-								</div>
-								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="coinCompany">
-										<label class="mdl-textfield__label" for="coinCompany">Coin</label>
-										<span class="mdl-textfield__error">Invalid coin</span>
-									</div>
-								</div>
-							</div>
-							<p class="text-center">
-								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
-									<i class="zmdi zmdi-plus"></i>
-								</button>
-								<div class="mdl-tooltip" for="btn-addCompany">Add company</div>
-							</p>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-</body>
-</html>
+        <!-- pageContent -->
+        <section class="full-width pageContent">
+            <!-- navBar -->
+            <div class="full-width navBar">
+                <div class="full-width navBar-options">
+                    <i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
+                    <div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+                    <nav class="navBar-options-list">
+                        <ul class="list-unstyle">
+                            <li class="btn-exit" id="btn-exit">
+                                <i class="zmdi zmdi-power"></i>
+                                <div class="mdl-tooltip" for="btn-exit">LogOut</div>
+                            </li>
+                            <li class="text-condensedLight noLink" ><small>User Name</small></li>
+                            <li class="noLink">
+                                <figure>
+                                    <img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+                                </figure>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <section class="full-width header-well">
+                <div class="full-width header-well-icon">
+                    <i class="zmdi zmdi-balance"></i>
+                </div>
+                <div class="full-width header-well-text">
+                    <p class="text-condensedLight">
+                        Apartado en el cual se podran agregar nuevas habitaciones conforme se consigan
+                    </p>
+                </div>
+            </section>
+            <div class="full-width divider-menu-h"></div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="full-width panel mdl-shadow--2dp">
+                        <div class="full-width panel-tittle bg-primary text-center tittles">
+                            Nueva Habitacion
+                        </div>
+                        <div class="full-width panel-content">
+                            <form>
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de Habitacion</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input name="precio" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNICompany">
+                                            <label class="mdl-textfield__label" for="DNICompany">Precio</label>
+                                            <span class="mdl-textfield__error">Precio Invalido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input name="noHabitaciones" class="mdl-textfield__input" type="number" pattern="-?[A-Za-z0-9Ã¡Ã©Ã­Ã³ÃºÃÃÃÃÃ ]*(\.[0-9]+)?" id="NameCompany">
+                                            <label class="mdl-textfield__label" for="NameCompany">Habitaciones Diponibles</label>
+                                            <span class="mdl-textfield__error">numero de Habitacion herronea</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="addressCompany" name="NombreHabitacion">
+                                            <label class="mdl-textfield__label" for="addressCompany">Nombre Habitacion</label>
+                                            <span class="mdl-textfield__error">Nombre Invalido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input name="subir_imagen" class="mdl-textfield__input" type="file" id="addressCompany">
+                                            <label class="mdl-textfield__label" for="addressCompany"></label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-center">
+                                            <button name="accion" value="insertar_habitacion" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
+                                                <i class="zmdi zmdi-plus"></i> 
+                                            </button>
+                                            
+                                            
+                                            <%
+                                            if ("accion".equals(request.getParameter("insertar_habitacion"))) {
+                                            String id = request.getParameter("precio");
+                                            String habitaciones = request.getParameter("noHabitaciones");
+                                            Part part = request.getPart("subir_imagen");
+                                            InputStream input = part.getInputStream();
+                                            HotelesDAO hotelesDao = new HotelesDAO();
+                                            Hoteles hotel = new Hoteles(request.getParameter("NombreHabitacion"), Integer.parseInt(id.trim()),Integer.parseInt(habitaciones.trim()), input);
+                                            hotelesDao.insertarImagen(hotel);
+                                            }
+                                        %>
+                                        <div class="mdl-tooltip" for="btn-addCompany">Agregar Habitacion</div>
+                                        <button name="accion" value="insertar_habitacion" type="submit">Insertar</button>
+                                        </p>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </section>
+                    </body>
+                    </html>

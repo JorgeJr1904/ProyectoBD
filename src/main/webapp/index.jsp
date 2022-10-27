@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="DAO.loginDao"%>
 <%@page import="constructores.login"%>
+<%@page session= "true"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -32,28 +33,37 @@
                 <p class="text-center" style="font-size: 80px;">
                     <i class="zmdi zmdi-account-circle"></i>
                 </p>
-                <p class="text-center text-condensedLight">Sign in with your Account</p>
+                <p class="text-center text-condensedLight">INGRESAR CON USUARIO</p>
                 <form method="POST">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="userName" name="usuario">
-                        <label class="mdl-textfield__label" for="userName">User Name</label>
+                        <label class="mdl-textfield__label" for="userName">USUARIO</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="password" id="pass" name="pass">
-                        <label class="mdl-textfield__label" for="pass">Password</label>
+                        <label class="mdl-textfield__label" for="pass">CONTRASEÑA</label>
                     </div>
-                    <button value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">
+                    <button  class="button type1" value="sign_in" name="btn_ingresar" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">
                         INICIAR SESION</button>
 
                     <%
                         int res = 0;
+                        String usuario = request.getParameter("usuario");
                         if ("sign_in".equals(request.getParameter("btn_ingresar"))) {
                             loginDao Logindao = new loginDao();
                             login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
                             Logindao.validacionUsuario(Login);
                             res = Logindao.validacionUsuario(Login);
                             if (res == 1) {%>  
-                    <%request.getRequestDispatcher("home.jsp").forward(request, response);%>
+                    <%
+                        request.setAttribute("usuario", usuario);
+                        loginDao LoginDao = new loginDao();
+                        login Login2 = new login(request.getParameter("usuario"), request.getParameter("pass"));
+                        String res2 = LoginDao.ObtencionDatosUsuario(Login);
+
+                        request.setAttribute("rol", res2);
+                        request.getRequestDispatcher("home.jsp").forward(request, response);
+                    %>
                     <% } else {
                     %>
                     <script>swal("Oops", "CONTRASEÑA O USUARIO INCORRECTO!", "error");</script>
