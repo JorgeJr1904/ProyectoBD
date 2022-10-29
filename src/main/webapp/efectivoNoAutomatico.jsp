@@ -9,26 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+         <link rel="stylesheet" href="css/FORM1.css">
+        <title>FORMULARIO PAGO NO AUTOMATICO</title>
     </head>
     <body> 
         <%
             String TipoPago = request.getParameter("tipoPago");
-            String Reservacion = request.getAttribute("idReservacion").toString();
+            String Reservacion = request.getParameter("tipoPago") ;
             String rol = request.getParameter("rol");
             String usuario = request.getParameter("usuario");
         %>
-        
+        <section class="form-register">
+        <h4>AGREGAR DATOS</h4>
         <form method="POST" action="validacionPago.jsp">
             
-            <label>Nombre Completo</label>
-            <input type="text" name="nombreFactura">
+            <input class="controls" type="text" name="nombreFactura"id="nombreFactura" placeholder="INGRESE NOMBRE COMPLETO">
             
-            <label>Direccion</label>
-            <input type="text" name="direccionFactura">
-            
-            <label>Telefono</label>
-            <input type="text" name="telefonoFactura">
+            <input class="controls" type="text" name="direccionFactura" id="direccionFactura" placeholder="INGRESE DIRECCION">
+
+            <input class="controls" type="text" name="telefonoFactura" id="telefonoFactura" placeholder="INGRESE NUMERO DE TELEFONO">
             
             <input hidden="true" type="text" name="idReservacion" value="<%=Reservacion%>">
             <input hidden="true" type="text" name="tipoPago" value="<%=TipoPago%>">
@@ -37,8 +39,9 @@
             <input hidden="true" type="text" name="numeroTarjeta" value="0">
             
             
-            <input type="submit" name="btn_pago" value="efectivoNoAutomatico">
+            <button class="botons" type="submit" name="btn_pago" value="efectivoNoAutomatico">ENVIAR</button>
         </form>
+             </section>
             
             <h1><%=TipoPago%></h1>
         <h1><%=Reservacion%></h1>

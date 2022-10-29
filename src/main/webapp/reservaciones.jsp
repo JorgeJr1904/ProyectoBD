@@ -35,19 +35,19 @@
                         <div class="form-row mb-2">
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">HABITACIONES<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="NUM.HABITACIONES">
+                                <input  type="text" class="form-control" placeholder="NUM.HABITACIONES">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">FECHA DE RESERVACION<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="**/**/****">
+                                <input type="date" name="" id="" type="text" class="form-control" placeholder="**/**/****">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">FECHA DE INGRESO<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="**/**/****">
+                                <input type="date" name="" id="" type="text" class="form-control" placeholder="**/**/****">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">FECHA DE SALIDA<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="**/**/****">
+                                <input type="date" name="" id="" type="text" class="form-control" placeholder="**/**/****">
                             </div>
                              <p>----------------------------------------------------------------------------------</p>
                              <h2>DATOS DE PERSONA</h2>

@@ -43,7 +43,7 @@
 					<div class="flexbox">
 						<div class="grupo" id="nombre">
 							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">Jhon Doe</p>
+							<p class="nombre">***********</p>
 						</div>
 
 						<div class="grupo" id="expiracion">
@@ -66,8 +66,8 @@
 						<p class="ccv"></p>
 					</div>
 				</div>
-				<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-				<a href="#" class="link-banco">www.tubanco.com</a>
+				<p class="leyenda">ESTOS DATOS SE AGREGARAN A SU USUARIO Y CUALQUIER COSA QUE CONSUMA DENTRO DE ESTABLESIMIENTO SERA CONSUMIDO DE ESTA TARJETA.</p>
+				<a href="#" class="link-banco">---------</a>
 			</div>
 		</section>
 

@@ -40,7 +40,7 @@
 					<div class="flexbox">
 						<div class="grupo" id="nombre">
 							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">Jhon Doe</p>
+							<p class="nombre">*********************</p>
 						</div>
 
 						<div class="grupo" id="expiracion">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 				<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-				<a href="#" class="link-banco">www.tubanco.com</a>
+				<a href="#" class="link-banco">-------</a>
 			</div>
 		</section>
 
