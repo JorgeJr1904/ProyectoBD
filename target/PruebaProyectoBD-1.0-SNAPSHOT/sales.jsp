@@ -320,36 +320,38 @@
 
                             <form method="POST" action="validacionReservar.jsp">
                                 <div class="form-row mb-2">
+                                    
+                                    <input hidden="true" type="text" class="form-control" name="idHabitacion" value="<%=idHabitacion%>">
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">HABITACIONES<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="font-weight-bold">FECHA.RESERVACION<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="**/**/****">
+                                        <input type="text" class="form-control" name="noHabitaciones">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">FECHA DE INGRESO<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="**/**/****">
+                                        <input type="text" class="form-control" placeholder="**/**/****" name="fechaIngreso">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">FECHA DE SALIDA<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="**/**/****">
+                                        <input type="text" class="form-control" placeholder="**/**/****" name="fechaSalida">
                                     </div>
                                     <p>----------------------------------------------------------------------------------</p>
                                     <h2>DATOS DE PERSONA</h2>
                                     <p>----------------------------------------------------------------------------------</p>
                                     <div class="form-group col-md-6">
+                                        <input hidden="true" type="text" class="form-control" placeholder="COMPLETOS" name="usuario" value="<%=Usuario%>">
+                                        <input hidden="true" type="text" class="form-control" placeholder="COMPLETOS" name="rol" value="<%=rol%>">
+                                    </div>
+                                    <div class="form-group col-md-6">
                                         <label class="font-weight-bold">NOMBRES<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="COMPLETOS">
+                                        <input type="text" class="form-control" placeholder="COMPLETOS" name="nombrePersona">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">APELLIDOS<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="COMPLETOS">
+                                        <input type="text" class="form-control" placeholder="COMPLETOS" name="apellidoPersona">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">EDAD<span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" placeholder="COMPLETOS">
+                                        <input type="number" class="form-control" placeholder="COMPLETOS" name="edadPersona">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">SEXO<span class="text-danger">*</span></label>
@@ -360,23 +362,23 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">NUMERO TELEFONICO<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="CELULAR O CASA">
+                                        <input type="text" class="form-control" placeholder="CELULAR O CASA" name="numeroTelefono">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">TIPO IDENTIFICACION<span class="text-danger">*</span></label>
-                                        <select class="form-control" name="sexo">
+                                        <select class="form-control" name="tipoIdentificacion">
                                             <option value="1" selected>DPI</option>
                                             <option value="2">PASAPORTE</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">NO.<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="NO. DE IDENTIFICACION">
+                                        <input type="text" class="form-control" placeholder="NO. DE IDENTIFICACION" name="numeroIdentificacion">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="font-weight-bold">DIRECCION<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="TIPO DE HABITACION">
+                                    <input type="text" class="form-control" placeholder="TIPO DE HABITACION" name="direccionPersona">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="font-weight-bold">PAIS<span class="text-danger">*</span></label>
@@ -621,15 +623,15 @@
                                     <h2>METODOS DE PAGO</h2>
                                     <p>----------------------------------------------------------------------------------</p>
                                     <div class="form-group col-md-6">
-                                        <label class="font-weight-bold">TIPO DE PAGO<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="COMPLETOS">
+                                        <select class="form-control" name="tipoPago">
+                                            <option value="1" selected>EFECTIVO</option>
+                                            <option value="2">TARJETA</option>
+                                        </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="font-weight-bold">APELLIDOS<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="COMPLETOS">
+                                        <label><input type="checkbox" name="btn_Facturacion" value="facturacionAutomatica"> Deseo Facturar con los mismos Datos Ingresados</label>
                                     </div>
-                                    
-                                    <br><button class="btn btn-primary width-100">RESERVAR</button>
+                                    <br><button class="btn btn-primary width-100" name="btn_reservar" value="reservar">RESERVAR</button>
                             </form>
                         </div>
                     </div>

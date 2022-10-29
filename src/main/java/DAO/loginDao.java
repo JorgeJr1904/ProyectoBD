@@ -7,8 +7,6 @@ package DAO;
 import constructores.login;
 import java.sql.*;
 import static conexion.conexion.*;
-import java.awt.BorderLayout;
-import java.util.*;
 
 public class loginDao {
 
@@ -31,9 +29,10 @@ public class loginDao {
             this.rs = this.ps.executeQuery();
 
             while (rs.next()) {
-                registro = registro + 1;
                 login.setUsuario(rs.getString("vNombreUsuario"));
                 login.setPass(rs.getString("vPass"));
+                login.setRol(rs.getString("iUsuarioRol"));
+                registro = registro + 1;
 
             }
             if (registro == 1) {

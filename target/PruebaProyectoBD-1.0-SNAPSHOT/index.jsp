@@ -4,6 +4,7 @@
     Author     : JorgeJr
 --%>
 
+<%@page import="constructores.UsuarioRolLogin"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="DAO.loginDao"%>
 <%@page import="constructores.login"%>
@@ -34,7 +35,7 @@
                     <i class="zmdi zmdi-account-circle"></i>
                 </p>
                 <p class="text-center text-condensedLight">INGRESAR CON USUARIO</p>
-                <form method="POST">
+                <form method="GET">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="userName" name="usuario">
                         <label class="mdl-textfield__label" for="userName">USUARIO</label>
@@ -48,20 +49,19 @@
 
                     <%
                         int res = 0;
-                        String usuario = request.getParameter("usuario");
+                        String rol;
+                        loginDao Logindao = new loginDao();
+                        login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
+
                         if ("sign_in".equals(request.getParameter("btn_ingresar"))) {
-                            loginDao Logindao = new loginDao();
-                            login Login = new login(request.getParameter("usuario"), request.getParameter("pass"));
+                            
                             Logindao.validacionUsuario(Login);
                             res = Logindao.validacionUsuario(Login);
                             if (res == 1) {%>  
                     <%
-                        request.setAttribute("usuario", usuario);
-                        loginDao LoginDao = new loginDao();
-                        login Login2 = new login(request.getParameter("usuario"), request.getParameter("pass"));
-                        String res2 = LoginDao.ObtencionDatosUsuario(Login);
-
-                        request.setAttribute("rol", res2);
+                        rol = Logindao.ObtencionDatosUsuario(Login);
+                        request.setAttribute("usuario", request.getParameter("usuario"));
+                        request.setAttribute("rol", Logindao.ObtencionDatosUsuario(Login));
                         request.getRequestDispatcher("home.jsp").forward(request, response);
                     %>
                     <% } else {

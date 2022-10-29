@@ -22,7 +22,8 @@
         <script src="js/main.js" ></script>
     </head>
     <body>
-        <%String res = request.getParameter("rol");%>
+        <%String rol = request.getParameter("rol");
+        String Usuario = request.getParameter("usuario");%>
         <!-- Notifications area -->
         <section class="full-width container-notifications">
             <div class="full-width container-notifications-bg btn-Notification"></div>
@@ -103,11 +104,8 @@
                     </div>
                     <figcaption>
                         <span>  
-                            <%=request.getParameter("usuario")%><br>
-                            <small><%if (res != null) {%>   
-                                <%=res%>
-                                <%} else {%>
-                                <%=request.getParameter("rol")%><%}%></small>
+                            <%=Usuario%><br>
+                            <small><%=rol%></small>
                         </span>
                     </figcaption>
                 </figure>
@@ -123,7 +121,7 @@
                                 </div>
                             </a>
                         </li>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN" || "SUPERVISOR".equals(request.getParameter("rol"))) {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -138,7 +136,7 @@
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
                                     <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                       &&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -148,11 +146,11 @@
                                     </a>
                                 </li>
                                 <li >
-                                    
+
                                 </li>
                             </ul>
                         </li><%}%>
-                        <%if ("ADMIN".equals(request.getParameter("rol")) || res == "ADMIN") {%>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN") {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -167,7 +165,7 @@
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
                                     <a href="crearUsuario.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                       &&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -178,7 +176,7 @@
                                 </li>
                                 <li class="full-width">
                                     <a href="roles.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=res%>" class="full-width">
+                                       &&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-accounts"></i>
                                         </div>
@@ -193,7 +191,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="hoteles.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -205,7 +203,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="sales.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -217,7 +215,7 @@
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="inventory.jsp?usuario=<%=request.getParameter("usuario")%>
-                               &&rol=<%=res%>" class="full-width">
+                               &&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-store"></i>
                                 </div>
@@ -305,7 +303,7 @@
                             Nueva Habitacion
                         </div>
                         <div class="full-width panel-content">
-                            <form>
+                            <form action="eliminar.jsp" method="POST">
                                 <div class="mdl-grid">
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de Habitacion</legend><br>
@@ -331,38 +329,19 @@
                                             <span class="mdl-textfield__error">Nombre Invalido</span>
                                         </div>
                                     </div>
-                                    <div class="mdl-cell mdl-cell--12-col">
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input name="subir_imagen" class="mdl-textfield__input" type="file" id="addressCompany">
-                                            <label class="mdl-textfield__label" for="addressCompany"></label>
-                                        </div>
-                                    </div>
                                     <div>
                                         <p class="text-center">
-                                            <button name="accion" value="insertar_habitacion" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
+                                           <button name="accion" value="insertar_habitacion" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
                                                 <i class="zmdi zmdi-plus"></i> 
                                             </button>
-                                            
-                                            
-                                            <%
-                                            if ("accion".equals(request.getParameter("insertar_habitacion"))) {
-                                            String id = request.getParameter("precio");
-                                            String habitaciones = request.getParameter("noHabitaciones");
-                                            Part part = request.getPart("subir_imagen");
-                                            InputStream input = part.getInputStream();
-                                            HotelesDAO hotelesDao = new HotelesDAO();
-                                            Hoteles hotel = new Hoteles(request.getParameter("NombreHabitacion"), Integer.parseInt(id.trim()),Integer.parseInt(habitaciones.trim()), input);
-                                            hotelesDao.insertarImagen(hotel);
-                                            }
-                                        %>
-                                        <div class="mdl-tooltip" for="btn-addCompany">Agregar Habitacion</div>
-                                        <button name="accion" value="insertar_habitacion" type="submit">Insertar</button>
                                         </p>
-                                        </form>
+                                        <div class="mdl-tooltip" for="btn-addCompany">Agregar Habitacion</div> 
+                                        
                                     </div>
                                 </div>
+                            </form>
                         </div>
                     </div>
-                    </section>
-                    </body>
-                    </html>
+        </section>
+    </body>
+</html>

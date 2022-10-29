@@ -4,6 +4,8 @@
     Author     : JorgeJr
 --%>
 
+<%@page import="constructores.Hoteles"%>
+<%@page import="DAO.HotelesDAO"%>
 <%@page import="constructores.Usuarios"%>
 <%@page import="DAO.UsuariosDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,10 +17,11 @@
     </head>
     <body>
         <%
-            String id = request.getParameter("id").replace(" ", "");
+
             String rol = request.getParameter("rol");
             String usuario = request.getParameter("usuario");
             if ("accion".equals(request.getParameter("eliminarUsuario"))) {
+                String id = request.getParameter("id").replace(" ", "");
                 UsuariosDAO usuariosDAO = new UsuariosDAO();
                 Usuarios usuarios = new Usuarios(Integer.valueOf(id));
                 usuariosDAO.eliminarUsuario(usuarios);
@@ -31,11 +34,21 @@
                         request.getParameter("correo"), request.getParameter("contra"));
                 usuarioDao.agregarUsuario(usuarios);
                 request.getRequestDispatcher("crearUsuario.jsp").forward(request, response);
-            } else {
+            
+            }if ("accion".equals(request.getParameter("insertar_habitacion"))) {
+             String precio = request.getParameter("precio");
+             String habitaciones = request.getParameter("noHabitaciones");
+             HotelesDAO hotelesDao = new HotelesDAO();
+             Hoteles hotel = new Hoteles(request.getParameter("NombreHabitacion"), Integer.parseInt(precio.trim()), Integer.parseInt(habitaciones.trim()));
+             hotelesDao.insertarImagen(hotel);
+             request.getRequestDispatcher("company.jsp").forward(request, response);
+             
+            }else {
                 request.setAttribute("rol", rol);
                 request.setAttribute("usuario", usuario);
                 request.getRequestDispatcher("crearUsuario.jsp").forward(request, response);
-            }
+            }                                
+            
         %>
     </body>
 </html>

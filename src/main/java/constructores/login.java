@@ -19,6 +19,12 @@ public class login {
     public login() {
     }
 
+    public login(String usuario, String pass, String rol) {
+        this.usuario = usuario;
+        this.pass = pass;
+        this.rol = rol;
+    }
+
     public login(String usuario, String pass) {
         this.usuario = usuario;
         this.pass = pass;
@@ -36,6 +42,8 @@ public class login {
         this.pass = pass;
         this.rol = rol;
     }
+    
+    
 
     public login(int idUsuario, String usuario, String pass, String correo, String rol) {
         this.idUsuario = idUsuario;
