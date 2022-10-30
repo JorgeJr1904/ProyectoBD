@@ -70,8 +70,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=rol%>" class="full-width">
+                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -99,8 +98,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>
-                                       &&rol=<%=rol%>" class="full-width">
+                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -115,8 +113,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=usuario%>
-                               &&rol=<%=rol%>" class="full-width">
+                            <a href="hoteles.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -127,8 +124,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=usuario%>
-                               &&rol=<%=rol%>" class="full-width">
+                            <a href="sales.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
