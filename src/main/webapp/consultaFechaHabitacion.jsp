@@ -11,19 +11,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CONSULTA</title>
+        <link rel="stylesheet" href="css/sss.css">
+       
+      
+      
+       
+        
+     
     </head>
     <body>
         <div class="mdl-tabs__panel" id="tabListAdmin">
             <div class="mdl-grid">
             </div>
-            <div class="main">
-                <h1 class="text1">LISTA DE USUSARIOS</h1>
-            </div>
+            
+            
             <table class="table2">
                 <thead>
                     <tr>
+                        <div class="contenedor">
+                <h1 class="text1">LISTA DE USUSARIOS</h1>
+            </div>
                         <th scope="col">FECHA RESERVACION</th>
                         <th scope="col">NOMBRE</th>
                         <th scope="col">APELLIDOS</th>
@@ -37,7 +47,7 @@
                     %>
 
                     <tr>
-                        <th scope="row"><%=CFH.getFechaReserva()%></th>
+                        <td scope="row"><%=CFH.getFechaReserva()%></td>
                         <td><%=CFH.getNombrePersona()%></td>
                         <td><%=CFH.getApellidosPersona()%></td>
                         <td><%=CFH.getNombreHabitacion()%></td>
