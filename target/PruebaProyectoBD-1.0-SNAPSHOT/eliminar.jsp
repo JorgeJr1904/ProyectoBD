@@ -17,7 +17,8 @@
     </head>
     <body>
         <%
-
+            String idUsuarioPass = request.getParameter("idUsuarioPass");
+            String nuevaPass = request.getParameter("nuevaPass");
             String rol = request.getParameter("rol");
             String usuario = request.getParameter("usuario");
             String precio = request.getParameter("precio");
@@ -30,7 +31,7 @@
                 usuariosDAO.eliminarUsuario(usuarios);
                 request.setAttribute("rol", rol);
                 request.setAttribute("usuario", usuario);
-                request.getRequestDispatcher("home.jsp").forward(request, response);
+                request.getRequestDispatcher("company.jsp").forward(request, response);
             }
             if ("agregar".equals(request.getParameter("btn_agregarUsuario"))) {
                 UsuariosDAO usuarioDao = new UsuariosDAO();
@@ -39,22 +40,27 @@
                 usuarioDao.agregarUsuario(usuarios);
                 request.setAttribute("rol", rol);
                 request.setAttribute("usuario", usuario);
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-            
-            }if ("insertarHabitacion".equals(request.getParameter("btn_InsertarHabitacion"))) {
-             HotelesDAO hotelesDao = new HotelesDAO();
-             Hoteles hotel = new Hoteles(request.getParameter("NombreHabitacion"), Integer.parseInt(precio.trim()), Integer.parseInt(habitaciones.trim()));
-             hotelesDao.insertarImagen(hotel);
-             request.setAttribute("rol", rol);
-             request.setAttribute("usuario", usuario);
-             request.getRequestDispatcher("company.jsp").forward(request, response);
-             
-            }else {
+                request.getRequestDispatcher("company.jsp").forward(request, response);
+
+            }
+            if ("insertarHabitacion".equals(request.getParameter("btn_InsertarHabitacion"))) {
+                HotelesDAO hotelesDao = new HotelesDAO();
+                Hoteles hotel = new Hoteles(request.getParameter("NombreHabitacion"), Integer.parseInt(precio.trim()), Integer.parseInt(habitaciones.trim()));
+                hotelesDao.insertarImagen(hotel);
                 request.setAttribute("rol", rol);
                 request.setAttribute("usuario", usuario);
-                request.getRequestDispatcher("crearUsuario.jsp").forward(request, response);
-            }                                
-            
+                request.getRequestDispatcher("company.jsp").forward(request, response);
+
+            }
+            if ("cambiarPass".equals(request.getParameter("btn_cambiarPass"))) {
+
+                UsuariosDAO usuarioDao = new UsuariosDAO();
+                Usuarios usuarios = new Usuarios(Integer.valueOf(idUsuarioPass), nuevaPass);
+                usuarioDao.cambiarPass(usuarios);
+                request.setAttribute("rol", rol);
+                request.setAttribute("usuario", usuario);
+                request.getRequestDispatcher("company.jsp").forward(request, response);
+            }
         %>
     </body>
 </html>

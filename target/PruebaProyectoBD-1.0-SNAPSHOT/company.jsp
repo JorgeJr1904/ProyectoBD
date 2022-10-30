@@ -70,8 +70,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>
-                                       &&rol=<%=rol%>" class="full-width">
+                                    <a href="company.jsp?usuario=<%=request.getParameter("usuario")%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -99,8 +98,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>
-                                       &&rol=<%=rol%>" class="full-width">
+                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -115,8 +113,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=usuario%>
-                               &&rol=<%=rol%>" class="full-width">
+                            <a href="hoteles.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -127,8 +124,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=usuario%>
-                               &&rol=<%=rol%>" class="full-width">
+                            <a href="sales.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -137,6 +133,7 @@
                                 </div>
                             </a>
                         </li>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN") {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -150,17 +147,17 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="#!" class="full-width">
+                                    <a href="ConsultaClienteFecha.jsp" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
                                         <div class="navLateral-body-cr">
-                                            OINVENTARIO 1
+                                            INVENTARIO 1
                                         </div>
                                     </a>
                                 </li>
                                 <li class="full-width">
-                                    <a href="#!" class="full-width">
+                                    <a href="ConsultaFechaHabitacion.jsp" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
@@ -189,6 +186,7 @@
                                         </div>
                                     </a>
                                 </li>
+                                <%}%>
                             </ul>
                         </li>
                     </ul>

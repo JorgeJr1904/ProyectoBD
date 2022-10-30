@@ -18,7 +18,7 @@
     <body> 
         <%
             String TipoPago = request.getParameter("tipoPago");
-            String Reservacion = request.getParameter("tipoPago") ;
+            String Reservacion = request.getParameter("idReservacion") ;
             String rol = request.getParameter("rol");
             String usuario = request.getParameter("usuario");
         %>
