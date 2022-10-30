@@ -135,6 +135,7 @@
                                 </div>
                             </a>
                         </li>
+                        <%if ("ADMIN".equals(request.getParameter("rol")) || rol == "ADMIN") {%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
                             <a href="#!" class="full-width btn-subMenu">
@@ -148,7 +149,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="#!" class="full-width">
+                                    <a href="ConsultaClienteFecha.jsp" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
@@ -158,7 +159,7 @@
                                     </a>
                                 </li>
                                 <li class="full-width">
-                                    <a href="#!" class="full-width">
+                                    <a href="ConsultaFechaHabitacion.jsp" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-widgets"></i>
                                         </div>
@@ -187,6 +188,7 @@
                                         </div>
                                     </a>
                                 </li>
+                                <%}%>
                             </ul>
                         </li>
                     </ul>

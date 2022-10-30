@@ -23,6 +23,13 @@ public class Usuarios {
         this.idUsuario = idUsuario;
     }
 
+    public Usuarios(int idUsuario, String pass) {
+        this.idUsuario = idUsuario;
+        this.pass = pass;
+    }
+
+    
+    
     public Usuarios(String usuario, String correo, String rol) {
         this.usuario = usuario;
         this.correo = correo;

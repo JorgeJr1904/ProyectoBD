@@ -107,4 +107,28 @@ public class UsuariosDAO {
         }
         return resultado;
     }
+        
+        public void cambiarPass(Usuarios usuarios) throws ClassNotFoundException {
+        String sql = "UPDATE usuarios set vPass = ? WHERE idUsuario = ?;";
+
+        try {
+            this.conn = getConexion();
+            this.ps = this.conn.prepareStatement(sql);
+
+            this.ps.setString(1, usuarios.getPass());
+            this.ps.setInt(2, usuarios.getIdUsuario());
+            this.ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                cerrar(this.ps);
+                cerrar(this.conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+
+            }
+        }
+    }
 }
