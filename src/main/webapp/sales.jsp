@@ -260,11 +260,11 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">FECHA DE INGRESO<span class="text-danger">*</span></label>
-                                        <input type="date" name="" id="" type="text" class="form-control" placeholder="**/**/****" name="fechaIngreso">
+                                        <input type="date" class="form-control" placeholder="****/**/**" name="fechaIngreso">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="font-weight-bold">FECHA DE SALIDA<span class="text-danger">*</span></label>
-                                        <input type="date" name="" id="" type="text" class="form-control" placeholder="**/**/****" name="fechaSalida">
+                                        <input type="date" class="form-control" placeholder="****/**/**" name="fechaSalida">
                                     </div>
                                     <p>----------------------------------------------------------------------------------</p>
                                     <h2>DATOS DE PERSONA</h2>

@@ -23,7 +23,7 @@
     </head>
     <body>
         <%String rol = request.getParameter("rol");
-        String Usuario = request.getParameter("usuario");%>
+        String usuario = request.getParameter("usuario");%>
         <!-- Notifications area -->
         
         <!-- navLateral -->
@@ -39,7 +39,7 @@
                     </div>
                     <figcaption>
                         <span>  
-                            <%=Usuario%><br>
+                            <%=usuario%><br>
                             <small><%=rol%></small>
                         </span>
                     </figcaption>
@@ -99,7 +99,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp?usuario=<%=request.getParameter("usuario")%>
+                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>
                                        &&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
@@ -115,7 +115,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=request.getParameter("usuario")%>
+                            <a href="hoteles.jsp?usuario=<%=usuario%>
                                &&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
@@ -127,7 +127,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=request.getParameter("usuario")%>
+                            <a href="sales.jsp?usuario=<%=usuario%>
                                &&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
@@ -201,14 +201,18 @@
             <div class="full-width navBar">
                 <div class="full-width navBar-options">
                     <i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
-                    <div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+                    <div class="mdl-tooltip" for="btn-menu">OCULTAR MENU</div>
                     <nav class="navBar-options-list">
                         <ul class="list-unstyle">
+                            <li class="btn-Notification" id="notifications">
+                                <i class="zmdi zmdi-notifications"></i>
+                                <div class="mdl-tooltip" for="notifications">NOTIFICACIONES</div>
+                            </li>
                             <li class="btn-exit" id="btn-exit">
                                 <i class="zmdi zmdi-power"></i>
-                                <div class="mdl-tooltip" for="btn-exit">LogOut</div>
+                                <div class="mdl-tooltip" for="btn-exit">CERRAR SECION</div>
                             </li>
-                            <li class="text-condensedLight noLink" ><small>User Name</small></li>
+                            <li class="text-condensedLight noLink" ><small><%=request.getParameter("usuario")%></small></li>
                             <li class="noLink">
                                 <figure>
                                     <img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
@@ -241,6 +245,8 @@
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de Habitacion</legend><br>
                                     </div>
+                                    <input type="text" hidden="" name="rol" value="<%=rol%>">
+                                    <input type="text" hidden="" name="usuario" value="<%=usuario%>">
                                     <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <input name="precio" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNICompany">
@@ -264,7 +270,7 @@
                                     </div>
                                     <div>
                                         <p class="text-center">
-                                           <button name="accion" value="insertar_habitacion" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
+                                           <button name="btn_InsertarHabitacion" value="insertarHabitacion" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
                                                 <i class="zmdi zmdi-plus"></i> 
                                             </button>
                                         </p>

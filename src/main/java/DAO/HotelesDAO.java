@@ -35,7 +35,6 @@ public class HotelesDAO {
             this.cs.setInt(1, hoteles.getPrecio());
             this.cs.setString(2, hoteles.getNombreHabitacion());
             this.cs.setInt(3, hoteles.getNoHabitaciones());
-
             this.cs.executeUpdate();
             
         } catch (SQLException ex) {
