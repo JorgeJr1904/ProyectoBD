@@ -23,7 +23,7 @@
         <script src="js/main.js" ></script>
     </head>
     <body>
-        <%String Usuario = request.getParameter("usuario");%>
+        <%String usuario = request.getParameter("usuario");%>
         
         <%String rol = request.getParameter("rol");%>
        
@@ -40,7 +40,7 @@
                     </div>
                     <figcaption>
                         <span>  
-                            <%=Usuario%><br>
+                            <%=usuario%><br>
                             <small><%=rol%></small>
                         </span>
                     </figcaption>
@@ -48,7 +48,7 @@
                 <nav class="full-width">
                     <ul class="full-width list-unstyle menu-principal">
                         <li class="full-width">
-                            <a href="home.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
+                            <a class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-view-dashboard"></i>
                                 </div>
@@ -71,7 +71,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="company.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
+                                    <a href="company.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-balance"></i>
                                         </div>
@@ -100,7 +100,7 @@
                             </a>
                             <ul class="full-width menu-principal sub-menu-options">
                                 <li class="full-width">
-                                    <a href="crearUsuario.jsp??usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
+                                    <a href="crearUsuario.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                         <div class="navLateral-body-cl">
                                             <i class="zmdi zmdi-account"></i>
                                         </div>
@@ -115,7 +115,7 @@
                         <%}%>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="hoteles.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
+                            <a href="hoteles.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-washing-machine"></i>
                                 </div>
@@ -126,7 +126,7 @@
                         </li>
                         <li class="full-width divider-menu-h"></li>
                         <li class="full-width">
-                            <a href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>" class="full-width">
+                            <a href="sales.jsp?usuario=<%=usuario%>&&rol=<%=rol%>" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
@@ -253,7 +253,7 @@
                         <td>Q<%=hotel.getPrecio()%>.00</td>
                         <td><%=hotel.getNoHabitaciones()%></td>                     
                         <td><img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152451/Mandarin-Oriental-Hong-Kong-3.jpg" width="50PX" height="50px"/></td>
-                <td><a class="button type1"  href="sales.jsp?usuario=<%=Usuario%>&&rol=<%=rol%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
+                <td><a class="button type1"  href="sales.jsp?usuario=<%=usuario%>&&rol=<%=rol%>&&idHabitacion=<%=hotel.getIdHabitacion()%>">RESERVAR</a></td>
                     </tr>
                     <%}%>
                 </tbody>
