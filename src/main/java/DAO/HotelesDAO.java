@@ -26,7 +26,7 @@ public class HotelesDAO {
     
     
     public void insertarImagen (Hoteles hoteles) throws ClassNotFoundException{
-    String sql = "{CALL insertaHabitacion(?, ?, ?, ?)}";
+    String sql = "{CALL insertaHabitacion(?, ?, ?)}";
     try {
 
             this.conn = getConexion();
@@ -35,9 +35,7 @@ public class HotelesDAO {
             this.cs.setInt(1, hoteles.getPrecio());
             this.cs.setString(2, hoteles.getNombreHabitacion());
             this.cs.setInt(3, hoteles.getNoHabitaciones());
-            this.cs.setBytes(4, hoteles.getImagen());
-
-            this.cs.execute();
+            this.cs.executeUpdate();
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -65,11 +63,10 @@ public class HotelesDAO {
             while (rs.next()) {
                 String nombreHabitacion = this.rs.getString("vNombreHabitacion");
                 int precio = this.rs.getInt("iPrecio");
-                byte[] imagen = this.rs.getBytes("imgImagen1");
                 int disponibilidad = this.rs.getInt("iNoDisponibleHabitaciones");
                 int id = this.rs.getInt("idHabitacion");
                 
-                this.hotel = new Hoteles(nombreHabitacion, id, precio,disponibilidad,imagen);
+                this.hotel = new Hoteles(nombreHabitacion, id, precio,disponibilidad);
                 hoteles.add(this.hotel);
             }
         } catch (SQLException ex) {

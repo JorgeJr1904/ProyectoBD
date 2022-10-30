@@ -20,6 +20,12 @@ public class Hoteles {
     public Hoteles() {
     }
 
+    public Hoteles(String nombreHabitacion, int precio, int noHabitaciones) {
+        this.nombreHabitacion = nombreHabitacion;
+        this.precio = precio;
+        this.noHabitaciones = noHabitaciones;
+    }
+    
     public Hoteles(String nombreHabitacion, int precio, int noHabitaciones, byte[] imagen) {
         this.nombreHabitacion = nombreHabitacion;
         this.precio = precio;
@@ -27,12 +33,11 @@ public class Hoteles {
         this.imagen = imagen;
     }
 
-    public Hoteles(String nombreHabitacion, int idHabitacion, int precio, int noHabitaciones, byte[] imagen) {
+    public Hoteles(String nombreHabitacion, int idHabitacion, int precio, int noHabitaciones) {
         this.nombreHabitacion = nombreHabitacion;
         this.idHabitacion = idHabitacion;
         this.precio = precio;
         this.noHabitaciones = noHabitaciones;
-        this.imagen = imagen;
     }
 
     public String getNombreHabitacion() {
