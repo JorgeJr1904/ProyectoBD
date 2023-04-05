@@ -25,7 +25,7 @@
         <h4>AGREGAR DATOS</h4>
         <form method="POST" action="eliminar.jsp">
             
-            <input class="controls" type="text" name="nuevaPass"id="nombreFactura" placeholder="INGRESE NUEVA CONTRASEÑA">           
+            <input class="controls" type="password" name="nuevaPass"id="nombreFactura" placeholder="INGRESE NUEVA CONTRASEÑA">           
 
             <input hidden="true" type="text" name="usuario" value="<%=usuario%>">
             <input hidden="true" type="text" name="rol" value="<%=rol%>">
