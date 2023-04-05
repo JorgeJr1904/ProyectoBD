@@ -58,14 +58,5 @@
 
 
         %>
-        <h1><%=NombreFactura%></h1>
-        <h1><%=NombreFactura%></h1>
-        <h1><%=DireccionFactura%></h1>
-        <h1><%=TelefonoFactura%></h1>
-        <h1><%=TipoPago%></h1>
-        <h1><%=NumeroTarjeta%></h1>
-        <h1><%=Reservacion%></h1>
-        <h1><%=rol%></h1>
-        <h1><%=usuario%></h1>
     </body>
 </html>

@@ -20,7 +20,7 @@ public class UsuariosDAO {
     private ResultSet rs = null;
     private CallableStatement cs = null;
     private PreparedStatement ps = null;
-    private Usuarios usuario;
+    private Usuarios usuario = new Usuarios();
 
     public List<Usuarios> ListarUsuarios() throws ClassNotFoundException {
         String sql = "{CALL ListarUsuarios}";
